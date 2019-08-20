@@ -17,15 +17,35 @@ function changeVocals (str) {
     var hasil =''
     for(var i=0; i<str1.length; i++){
         if(str1[i] === 'a' || str[i] === 'A'){
-            hasil += 'b'
+            if (str1[i] === str[i].toUpperCase()) {
+                hasil+='B'
+            } else {
+                hasil+='b'
+            }
         }else if(str1[i] === 'i' || str[i] === 'I'){
-            hasil += 'j'
+            if (str1[i] === str[i].toUpperCase()) {
+                hasil += 'J'
+            }else {
+                hasil += 'j'
+            }
         }else if(str[i] === 'u' || str[i] === 'U'){
-            hasil += 'v'
+            if (str1[i] === str[i].toUpperCase()) {
+                hasil += 'V'
+            }else {
+                hasil += 'v'
+            }
         }else if(str1[i] === 'e'|| str[i] === 'E'){
-            hasil += 'f'
+            if (str1[i] === str[i].toUpperCase()) {
+                hasil += 'F'
+            }else {
+                hasil += 'f'
+            }
         }else if(str1[i] === 'o'|| str[i] === 'O'){
-            hasil += 'p'
+            if (str1[i] === str[i].toUpperCase()) {
+                hasil += 'P'
+            }else {
+                hasil += 'p'
+            }
         }else {
             hasil +=str[i]
         }
@@ -33,6 +53,8 @@ function changeVocals (str) {
     return hasil
 }
 // console.log(changeVocals('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
+
+// console.log(setLowerUpperCase('vPnVgBrD JFgrFS')); // 'VPNVGBRdJFGRFs'
 
 function reverseWord (str) {
     //code di sini
@@ -50,23 +72,31 @@ function setLowerUpperCase (str) {
     //code di sini
     var hasil =''
     for(var i=0; i<str.length; i++){
-        if(isNaN(str[i])){
             if(str[i]===str[i].toLowerCase()){
                 hasil += str[i].toUpperCase()
             }else if(str[i] === str[i].toUpperCase()){
                 hasil += str[i].toLowerCase()
             }
-            // else{
-                // hasil += str[i]
-            // }
-        }
     }
     return hasil
 }
-// console.log(setLowerUpperCase('Aku AdAlah Lelaki Yang TAK pERnaH'))
+// console.log(setLowerUpperCase('tesST '))
 function removeSpaces (str) {
     //code di sini
+    var hasil = ''
+    var tampung = ''
+    for(var i=0; i<str.length; i++){
+        if(str[i]===' '){
+            hasil += tampung
+            tampung = ''
+        }else{
+            tampung+=str[i]
+        }
+    }
+    hasil+=tampung
+    return hasil
 }
+// console.log(removeSpaces('testsatu dua tiga'))
 
 function passwordGenerator (name) {
     //code di sini
@@ -74,7 +104,7 @@ function passwordGenerator (name) {
         return 'Minimal karakter yang diinputkan adalah 5 karakter'
     }
 
-    return setLowerUpperCase(reverseWord(changeVocals(name)))
+    return changeVocals(setLowerUpperCase(reverseWord(removeSpaces(name))))
 }
 
   console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
