@@ -13,23 +13,68 @@ Semua manipulasi string (changeVocals, reverseWord, setLowerUpperCase, removeSpa
 */
 
 function changeVocals (str) {
-    //code di sini
+    var str1=str
+    var hasil =''
+    for(var i=0; i<str1.length; i++){
+        if(str1[i] === 'a' || str[i] === 'A'){
+            hasil += 'b'
+        }else if(str1[i] === 'i' || str[i] === 'I'){
+            hasil += 'j'
+        }else if(str[i] === 'u' || str[i] === 'U'){
+            hasil += 'v'
+        }else if(str1[i] === 'e'|| str[i] === 'E'){
+            hasil += 'f'
+        }else if(str1[i] === 'o'|| str[i] === 'O'){
+            hasil += 'p'
+        }else {
+            hasil +=str[i]
+        }
+    }
+    return hasil
 }
+// console.log(changeVocals('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
 
 function reverseWord (str) {
     //code di sini
+    var gabung = ''
+    for(var i=str.length-1; i>=0; i--){
+        gabung += str[i]
+    }
+    return gabung
+
 }
+
+// console.log(reverseWord('halloeric'))
 
 function setLowerUpperCase (str) {
     //code di sini
+    var hasil =''
+    for(var i=0; i<str.length; i++){
+        if(isNaN(str[i])){
+            if(str[i]===str[i].toLowerCase()){
+                hasil += str[i].toUpperCase()
+            }else if(str[i] === str[i].toUpperCase()){
+                hasil += str[i].toLowerCase()
+            }
+            // else{
+                // hasil += str[i]
+            // }
+        }
+    }
+    return hasil
 }
-
+// console.log(setLowerUpperCase('Aku AdAlah Lelaki Yang TAK pERnaH'))
 function removeSpaces (str) {
     //code di sini
 }
 
 function passwordGenerator (name) {
     //code di sini
+    if(name.length<5){
+        return 'Minimal karakter yang diinputkan adalah 5 karakter'
+    }
+
+    return setLowerUpperCase(reverseWord(changeVocals(name)))
 }
 
   console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'

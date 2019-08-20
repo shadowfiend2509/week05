@@ -7,11 +7,24 @@ Dengan HANYA mengubah code di dalam 2 function yang diberikan (sorting dan getTo
 
 
 function sorting(arrNumber) {
-    // code di sini
+  var sort = arrNumber.sort(function(a,b){ return a<b})
+  return sort
 }
 
 function getTotal(arrNumber) {
-    // code di sini
+  var hasil=0
+  var sort=sorting(arrNumber)[0]
+  for(var i=0; i<arrNumber.length; i++){
+    if(arrNumber[i]===sort){
+      hasil++
+      // console.log(hasil)
+    }
+  }
+  if(sort === undefined){
+    return '\'\''
+  }
+  
+  return 'angka paling besar adalah '+sort+' dan jumlah kemunculan sebanyak '+hasil+' kali'
 }
 
 function mostFrequentLargestNumbers(arrNumber) {

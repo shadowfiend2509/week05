@@ -7,7 +7,15 @@ Contoh:
 */
 
 function totalDigitRekursif(angka) {
-    // you can only write your code here!
+    var string = angka.toString()
+    // console.log(string)
+    if(string.length === 1){
+      return Number(angka)
+    }else{
+      var angka1 = Number(string[0])
+      string =string.slice(1)
+      return angka1 + totalDigitRekursif(Number(string))
+    }
 }
 
   // TEST CASES

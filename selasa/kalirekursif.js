@@ -9,6 +9,22 @@ Contoh:
 
 function kaliTerusRekursif(angka) {
     // you can only write your code here!
+    var string=angka.toString()
+    if(string.length === 1){
+      return Number(string)
+    }else{
+      var angka1 = Number(string[0])
+      string = string.slice(1)
+      hasil = (angka1 * string).toString()
+      if(hasil.length === 1){
+        return Number(hasil)
+      }else{
+        var angka2 = Number(hasil[0])
+        hasil = hasil.slice(1)
+        return angka2 * kaliTerusRekursif(Number(hasil))
+      }
+      // return kaliTerusRekursif(Number(hasil))
+    }
 }
 
   // TEST CASES
