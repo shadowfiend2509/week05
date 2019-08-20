@@ -35,4 +35,5 @@
   console.log(damageCalculation(10, 4)); // 20
     
   console.log(damageCalculation(5, 20)); // 90
-  console.log(damageCalculation(10, 45)); // 90
+  console.log(damageCalculation(10, 45)); // 450
+
