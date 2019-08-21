@@ -13,31 +13,32 @@ function kaliTerusRekursif(angka) {
     if(string.length === 1){
       return angka
     }else{
-      // var kali = 1
-      // for(var i=0; i<string.length; i++){
-      //   kali *= Number(string[i])
-      // }
+      var kali = 1
+      for(var i=0; i<string.length; i++){
+        kali *= Number(string[i])
+      }
+      // perulangan(angka)
 
-      // return kaliTerusRekursif(kali)
+      return kaliTerusRekursif(kali)
     }
 }
-function perulangan(angka){
-  var string = angka.toString()
-  if(string.length===1){
-    return string.length
-  }else{
-    var kali = 1
-    var front = Number(string[0])
-    hasil = kali * front
-    // var neww =string.slice(1)
-    return hasil + perulangan(string.slice(1))
-  }
-}
-console.log(perulangan(4246))
+// function perulangan(angka){
+//   var string = angka.toString()
+//   if(string.length===1){
+//     return string.length
+//   }else{
+//     var kali = 1
+//     var front = Number(string[0])
+//     hasil = kali * front
+//     // var neww =string.slice(1)
+//     return hasil + perulangan(string.slice(1))
+//   }
+// }
+// console.log(perulangan(4246))
 
   // TEST CASES
-  // console.log(kaliTerusRekursif(66)); // 8
-  // console.log(kaliTerusRekursif(3)); // 3
-  // console.log(kaliTerusRekursif(24)); // 8
-  // console.log(kaliTerusRekursif(654)); // 0
-  // console.log(kaliTerusRekursif(1231)); // 6
+  console.log(kaliTerusRekursif(66)); // 8
+  console.log(kaliTerusRekursif(3)); // 3
+  console.log(kaliTerusRekursif(24)); // 8
+  console.log(kaliTerusRekursif(654)); // 0
+  console.log(kaliTerusRekursif(1231)); // 6

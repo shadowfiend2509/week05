@@ -3,7 +3,13 @@
 
 
 function hapusSimbol(str) {
-
+  var tampung = ''
+  for(var i=0; i<str.length; i++){
+    if(str[i].match(/[a-z]+/g) || str[i].match(/[0-9]+/g)){
+      tampung+=str[i]
+    }
+  }
+  return tampung
 }
 
   // TEST CASES
