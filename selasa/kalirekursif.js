@@ -9,27 +9,35 @@ Contoh:
 
 function kaliTerusRekursif(angka) {
     // you can only write your code here!
-    var string=angka.toString()
+    var string = angka.toString()
     if(string.length === 1){
-      return Number(string)
+      return angka
     }else{
-      var angka1 = Number(string[0])
-      string = string.slice(1)
-      hasil = (angka1 * string).toString()
-      if(hasil.length === 1){
-        return Number(hasil)
-      }else{
-        var angka2 = Number(hasil[0])
-        hasil = hasil.slice(1)
-        return angka2 * kaliTerusRekursif(Number(hasil))
-      }
-      // return kaliTerusRekursif(Number(hasil))
+      // var kali = 1
+      // for(var i=0; i<string.length; i++){
+      //   kali *= Number(string[i])
+      // }
+
+      // return kaliTerusRekursif(kali)
     }
 }
+function perulangan(angka){
+  var string = angka.toString()
+  if(string.length===1){
+    return string.length
+  }else{
+    var kali = 1
+    var front = Number(string[0])
+    hasil = kali * front
+    // var neww =string.slice(1)
+    return hasil + perulangan(string.slice(1))
+  }
+}
+console.log(perulangan(4246))
 
   // TEST CASES
-  console.log(kaliTerusRekursif(66)); // 8
-  console.log(kaliTerusRekursif(3)); // 3
-  console.log(kaliTerusRekursif(24)); // 8
-  console.log(kaliTerusRekursif(654)); // 0
-  console.log(kaliTerusRekursif(1231)); // 6
+  // console.log(kaliTerusRekursif(66)); // 8
+  // console.log(kaliTerusRekursif(3)); // 3
+  // console.log(kaliTerusRekursif(24)); // 8
+  // console.log(kaliTerusRekursif(654)); // 0
+  // console.log(kaliTerusRekursif(1231)); // 6
