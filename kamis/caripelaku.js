@@ -4,11 +4,7 @@
 
 function cariPelaku(str) {
     var hasil = 0
-    for(var i=0; i<str.length; i++){
-        if(str.match(/abc/)){
-            hasil = str.match(/abc/gi)  //cari indexnya ada berapa
-        }
-    }
+    hasil = str.match(/abc/gi)  //cari indexnya ada berapa
     return hasil.length
 }
 
