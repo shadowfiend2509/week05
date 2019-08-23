@@ -7,8 +7,16 @@ Dengan HANYA mengubah code di dalam 2 function yang diberikan (sorting dan getTo
 
 
 function sorting(arrNumber) {
-  var sort = arrNumber.sort(function(a,b){ return a<b})
-  return sort
+  for(var i=0; i<arrNumber.length; i++){      //looping dr besar jadi terkecil 
+    for(var j=0; j<arrNumber.length; j++){
+        if(arrNumber[i]>arrNumber[j]){
+            var tampung = arrNumber[j]
+            arrNumber[j] = arrNumber[i]
+            arrNumber[i] =tampung
+        }
+    }
+  }
+  return arrNumber
 }
 
 function getTotal(arrNumber) {
@@ -17,13 +25,11 @@ function getTotal(arrNumber) {
   for(var i=0; i<arrNumber.length; i++){
     if(arrNumber[i]===sort){
       hasil++
-      // console.log(hasil)
     }
   }
   if(sort === undefined){
     return '\'\''
   }
-  
   return 'angka paling besar adalah '+sort+' dan jumlah kemunculan sebanyak '+hasil+' kali'
 }
 
